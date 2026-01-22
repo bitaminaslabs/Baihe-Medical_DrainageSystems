@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baihe Medical Iberia </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #002147;
+            --teal: #008080;
+            --sky: #0ea5e9;
+            --accent: #f59e0b;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #000;
+            margin: 0;
+            overflow: hidden;
+            color: white;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+            background: radial-gradient(circle at center, #111827 0%, #000 100%);
+            padding: 4rem;
+        }
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .slide-content {
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.8s 0.3s ease;
+            width: 100%;
+            height: 100%;
+        }
+        .slide.active .slide-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Decorative Elements */
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        /* Animations */
+        @keyframes pulse-teal {
+            0% { box-shadow: 0 0 0 0 rgba(0, 128, 128, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(0, 128, 128, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 128, 128, 0); }
+        }
+        .pulse { animation: pulse-teal 2s infinite; }
+
+        /* Catheter Vector Simulation */
+        .catheter-line {
+            height: 8px;
+            background: linear-gradient(90deg, #94a3b8, #cbd5e1);
+            border-radius: 4px;
+            position: relative;
+            width: 0;
+            transition: width 1.5s ease 0.5s;
+        }
+        .slide.active .catheter-line { width: 300px; }
+        .pigtail-curve {
+            width: 60px;
+            height: 60px;
+            border: 8px solid #cbd5e1;
+            border-radius: 50%;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            position: absolute;
+            right: -30px;
+            top: -26px;
+            transform: rotate(45deg);
+            opacity: 0;
+            transition: opacity 0.5s 2s;
+        }
+        .slide.active .pigtail-curve { opacity: 1; }
+
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #374151;
+            transition: all 0.3s;
+        }
+        .progress-dot.active {
+            background: var(--sky);
+            width: 30px;
+            border-radius: 10px;
+        }
+        
+        .grad-text {
+            background: linear-gradient(to right, #38bdf8, #2dd4bf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+
+    <!-- Navigation Help -->
+    <div class="fixed top-4 right-4 text-xs text-slate-500 font-mono z-50">
+        [ARROWS] TO NAVIGATE • [SPACE] TO ADVANCE
+    </div>
+
+    <!-- Slide 1: Hook -->
+    <section class="slide active" id="s1">
+        <div class="slide-content flex flex-col justify-center items-center text-center">
+            <div class="mb-6 px-4 py-1 border border-sky-500/30 bg-sky-500/10 text-sky-400 rounded-full text-sm font-bold tracking-widest uppercase animate-pulse">
+                Strategic Alliance
+            </div>
+            <h1 class="text-7xl md:text-9xl font-extrabold mb-6 leading-none">THE DRAINAGE<br><span class="grad-text">SOLUTION.</span></h1>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-3xl font-light">
+                Why Baihe Medical is the missing piece in your Iberian distribution portfolio.
+            </p>
+            <div class="mt-12 h-1 w-24 bg-sky-500"></div>
+        </div>
+    </section>
+
+    <!-- Slide 2: The Pain Point -->
+    <section class="slide" id="s2">
+        <div class="slide-content grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-5xl font-bold mb-8">The Market Is<br><span class="text-teal-400">Stagnant.</span></h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded bg-red-500/20 text-red-500 flex items-center justify-center shrink-0">✕</div>
+                        <p class="text-lg text-slate-300">Incumbents are overpricing basic Seldinger technology.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded bg-red-500/20 text-red-500 flex items-center justify-center shrink-0">✕</div>
+                        <p class="text-lg text-slate-300">Public health tenders are demanding higher efficiency at better costs.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 rounded bg-red-500/20 text-red-500 flex items-center justify-center shrink-0">✕</div>
+                        <p class="text-lg text-slate-300">Distributors are losing margins to legacy "Big Med" brands.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
+                <div class="text-6xl font-black text-white mb-2">35%</div>
+                <div class="text-slate-400 uppercase tracking-widest text-sm">Potential Margin Opportunity Gap</div>
+                <div class="mt-8 space-y-2">
+                    <div class="h-4 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-red-500 w-full"></div>
+                    </div>
+                    <div class="h-4 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-sky-500 w-2/3"></div>
+                    </div>
+                </div>
+                <p class="mt-4 text-xs text-slate-500 italic">Distributor margin comparison: Legacy vs. Baihe Strategy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: The Portfolio Pillars -->
+    <section class="slide" id="s3">
+        <div class="slide-content">
+            <h2 class="text-4xl font-bold mb-12 text-center">One Partner. <span class="text-sky-400">Two Gold Standards.</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-2/3">
+                <div class="bg-white/5 p-10 rounded-3xl border border-white/10 hover:border-sky-500/50 transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-sky-400 font-bold mb-2">TYPE A</div>
+                        <h3 class="text-3xl font-bold mb-4">Standard Seldinger</h3>
+                        <p class="text-slate-400">The reliable powerhouse. Full SKU depth (6Fr-16Fr). Perfect for routine high-volume drainage in hospital wards.</p>
+                    </div>
+                    <div class="mt-8 flex justify-between items-end">
+                        <div class="catheter-container relative">
+                            <div class="catheter-line"></div>
+                            <div class="pigtail-curve"></div>
+                        </div>
+                        <div class="text-xs text-slate-500 font-mono">CODE: FY-SERIES</div>
+                    </div>
+                </div>
+                <div class="bg-white/5 p-10 rounded-3xl border border-white/10 hover:border-teal-500/50 transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-teal-400 font-bold mb-2">TYPE B</div>
+                        <h3 class="text-3xl font-bold mb-4">Single One Step Locking</h3>
+                        <p class="text-slate-400">Direct access trocar with Safety String Lock. The new solution for Nephrostomy.</p>
+                    </div>
+                    <div class="mt-8 flex justify-between items-end">
+                        <div class="relative w-40 h-20">
+                            <div class="absolute inset-0 border-2 border-teal-500/30 rounded-full animate-ping"></div>
+                            <div class="absolute inset-4 border border-teal-500/50 rounded-full flex items-center justify-center text-xs text-teal-400">LOCK SYSTEM</div>
+                        </div>
+                        <div class="text-xs text-slate-500 font-mono">KIT: ONE-STOP</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Material Advantage -->
+    <section class="slide" id="s4">
+        <div class="slide-content flex flex-col justify-center items-center">
+            <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative h-64 w-64">
+                    <div class="absolute inset-0 bg-sky-500/20 rounded-full blur-3xl"></div>
+                    <svg viewBox="0 0 100 100" class="w-full h-full text-sky-400">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 2" />
+                        <path d="M20,50 Q50,20 80,50" fill="none" stroke="white" stroke-width="2" class="animate-pulse" />
+                    </svg>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                        <div class="text-4xl font-bold">37°C</div>
+                        <div class="text-[10px] uppercase tracking-tighter">Transition Point</div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-5xl font-bold mb-6">Smart<br><span class="grad-text">Polyurethane.</span></h2>
+                    <p class="text-lg text-slate-400 mb-6 leading-relaxed">
+                        Our material is engineered to be <strong>stiff</strong> for precise insertion, yet <strong>softens</strong> at body temperature to prevent patient irritation and kinking.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-sky-400">
+                            <span class="w-2 h-2 bg-sky-400 rounded-full"></span> High Biocompatibility
+                        </li>
+                        <li class="flex items-center gap-2 text-sky-400">
+                            <span class="w-2 h-2 bg-sky-400 rounded-full"></span> Radiopaque for X-Ray Mastery
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Standard Range (Adjusted) -->
+    <section class="slide" id="s5">
+        <div class="slide-content">
+            <h2 class="text-4xl font-bold mb-4">Standard Range: <span class="text-slate-400">The Efficiency Engine</span></h2>
+            <p class="text-xl text-slate-300 mb-12 max-w-2xl">The FY-Series is designed to win volume tenders by providing high-tier specifications at an optimized procurement price.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:bg-slate-800/50 transition duration-300">
+                    <div class="w-12 h-12 bg-sky-500/20 text-sky-400 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h4 class="text-white font-bold mb-3">Seldinger Kit</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Complete sterile solutions including J-tip guidewire, dilators, and scalpels for immediate OR readiness.</p>
+                </div>
+                
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:bg-slate-800/50 transition duration-300">
+                    <div class="w-12 h-12 bg-sky-500/20 text-sky-400 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="text-white font-bold mb-3">X-Ray Clarity</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Full radiopacity and high-visibility graduation markings ensure precise mastery of catheter placement length.</p>
+                </div>
+                
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:bg-slate-800/50 transition duration-300">
+                    <div class="w-12 h-12 bg-sky-500/20 text-sky-400 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    </div>
+                    <h4 class="text-white font-bold mb-3">Self-Soften</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Self-softening PU material reduces patient irritation and prevents catheter adherence or blockage over time.</p>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:bg-slate-800/50 transition duration-300">
+                    <div class="w-12 h-12 bg-sky-500/20 text-sky-400 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h4 class="text-white font-bold mb-3">Tender Power</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Broad SKU range (6Fr-16Fr) in both Straight and Pigtail shapes to meet 100% of hospital tender requirements.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 p-6 bg-sky-500/5 border-l-4 border-sky-500 rounded-r-xl">
+                <p class="text-slate-300 text-lg italic">"A foundation of reliability that allows distributors to consolidate their portfolio under one trusted CE-certified manufacturer."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: The Innovation (Single Step) -->
+    <section class="slide" id="s6">
+        <div class="slide-content flex flex-col justify-center">
+            <div class="max-w-4xl">
+                <h2 class="text-6xl font-black mb-6">Procedural<br><span class="text-teal-400">Dominance.</span></h2>
+                <p class="text-2xl text-slate-300 mb-12">The Single Step Kit isn't just a device; it's a 40% reduction in time-to-drainage.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="border-l-4 border-teal-500 pl-6">
+                        <h4 class="text-xl font-bold mb-2">Direct Access Access</h4>
+                        <p class="text-slate-400">Trocar-based insertion allows for single-pass placement in emergency or superficial cases.</p>
+                    </div>
+                    <div class="border-l-4 border-teal-500 pl-6">
+                        <h4 class="text-xl font-bold mb-2">Versatile</h4>
+                        <p class="text-slate-400">Can still be used with the Seldinger technique if the clinical scenario shifts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Safety String Lock -->
+    <section class="slide" id="s7">
+        <div class="slide-content grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="relative bg-slate-900 p-12 rounded-full aspect-square flex items-center justify-center border border-teal-500/20">
+                <svg viewBox="0 0 100 100" class="w-full">
+                   <path d="M30,50 A20,20 0 1,1 70,50" fill="none" stroke="teal" stroke-width="4" stroke-linecap="round" class="animate-draw" />
+                   <line x1="50" y1="30" x2="50" y2="70" stroke="white" stroke-width="1" stroke-dasharray="2 2" />
+                </svg>
+                <div class="absolute bottom-10 bg-teal-500 px-4 py-1 rounded text-xs font-bold uppercase">Strong Fixation</div>
+            </div>
+            <div>
+                <h2 class="text-5xl font-bold mb-6">Safety String <span class="text-teal-400">Lock.</span></h2>
+                <p class="text-lg text-slate-400 mb-8">
+                    Unlike friction-based pigtails that slip, our <strong>nylon line system</strong> provides a mechanical lock.
+                </p>
+                <div class="bg-teal-900/20 border border-teal-500/30 p-6 rounded-xl">
+                    <h5 class="font-bold text-teal-400 mb-2">The Result:</h5>
+                    <p class="text-sm text-slate-300 italic">Zero accidental dislodgement. Reduced hospital readmissions. Happier clinicians.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: SKU Mastery -->
+    <section class="slide" id="s8">
+        <div class="slide-content">
+            <h2 class="text-4xl font-bold mb-4">Unmatched SKU <span class="text-sky-400">Depth.</span></h2>
+            <p class="text-slate-400 mb-8">Never lose a tender because of a missing size.</p>
+            <div class="grid grid-cols-6 gap-4 text-center">
+                <div class="p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-sky-500 transition">6Fr</div>
+                <div class="p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-sky-500 transition">7Fr</div>
+                <div class="p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-sky-500 transition">8Fr</div>
+                <div class="p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-sky-500 transition">10Fr</div>
+                <div class="p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-sky-500 transition">12Fr</div>
+                <div class="p-4 bg-slate-900 rounded-lg border border-slate-800 hover:border-sky-500 transition">14-16Fr</div>
+            </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
+                    <h4 class="font-bold mb-4">Lengths</h4>
+                    <div class="flex items-center gap-4">
+                        <span class="text-xs">15cm</span>
+                        <div class="flex-grow h-px bg-slate-700"></div>
+                        <span class="text-xs">35cm</span>
+                    </div>
+                    <p class="mt-4 text-xs text-slate-500">Universal coverage for Nephrostomy, Abscess, and Multi-purpose drainage.</p>
+                </div>
+                <div class="bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
+                    <h4 class="font-bold mb-4">Configurations</h4>
+                    <p class="text-sm text-slate-300">Pigtail or Straight. With or without Nylon Line. Kits or Individual components.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Spain Strategy -->
+    <section class="slide" id="s9">
+        <div class="slide-content grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-4 bg-yellow-500"></div>
+                    <div class="w-8 h-4 bg-red-600"></div>
+                    <span class="uppercase tracking-widest font-bold text-slate-400">ESPAÑA</span>
+                </div>
+                <h2 class="text-6xl font-black mb-6">High Volume<br><span class="text-red-500">Tenders.</span></h2>
+                <p class="text-lg text-slate-300">Spain's regionalized SNS systems (Madrid, Catalonia, Andalusia) require high-volume reliability.</p>
+                <ul class="mt-8 space-y-4">
+                    <li class="bg-white/5 p-4 rounded-lg">Position <strong>Standard Catheter</strong> for bulk SNS regional procurement.</li>
+                    <li class="bg-white/5 p-4 rounded-lg">Push <strong>Single Step</strong> into the leading Interventional Radiology private chains (Quirónsalud, Vithas).</li>
+                </ul>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-red-500/10 blur-3xl"></div>
+                <div class="border border-slate-800 bg-slate-950 p-10 rounded-3xl relative overflow-hidden">
+                    <div class="text-xs font-mono text-slate-500 mb-4">TARGET SEGMENTATION</div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between text-xs"><span>PUBLIC SECTOR</span><span class="text-red-500">70%</span></div>
+                        <div class="h-1 bg-slate-800 rounded-full"><div class="h-full bg-red-500 w-[70%]"></div></div>
+                        <div class="flex justify-between text-xs mt-4"><span>PRIVATE SECTOR</span><span class="text-red-500">30%</span></div>
+                        <div class="h-1 bg-slate-800 rounded-full"><div class="h-full bg-red-500 w-[30%]"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 10: Portugal Strategy -->
+    <section class="slide" id="s10">
+        <div class="slide-content grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+             <div class="relative order-2 md:order-1">
+                <div class="absolute inset-0 bg-green-500/10 blur-3xl"></div>
+                <div class="border border-slate-800 bg-slate-950 p-10 rounded-3xl relative">
+                    <h3 class="text-2xl font-bold mb-6">SPMS Efficiency Play</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        In Portugal, the focus is on <strong>Unit Price vs. Procedural Speed</strong>. We position the Single Step as a way to reduce bed-stay costs in ULS hospitals.
+                    </p>
+                    <div class="mt-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-xs text-center font-bold">
+                        LOWER TOTAL COST OF CARE
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-4 bg-green-600"></div>
+                    <div class="w-8 h-4 bg-red-600"></div>
+                    <span class="uppercase tracking-widest font-bold text-slate-400">PORTUGAL</span>
+                </div>
+                <h2 class="text-6xl font-black mb-6">Value-Based<br><span class="text-green-500">Care.</span></h2>
+                <p class="text-lg text-slate-300">Centralized procurement (SPMS) favors partners who provide clinical training alongside devices.</p>
+                <ul class="mt-8 space-y-4">
+                    <li class="bg-white/5 p-4 rounded-lg">Direct clinical support for Porto and Lisbon hub hospitals.</li>
+                    <li class="bg-white/5 p-4 rounded-lg">ULS-specific supply chain agreements.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 11: The Business Case -->
+    <section class="slide" id="s11">
+        <div class="slide-content">
+            <h2 class="text-4xl font-bold mb-12 text-center">Why Partner With Us?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-sky-500/20 text-sky-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-sky-500 group-hover:text-white transition duration-500">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Price Protection</h4>
+                    <p class="text-slate-400 text-sm">We provide fixed-cost agreements for 12-24 months to secure your tender margins.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-teal-500/20 text-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-500 group-hover:text-white transition duration-500">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Quality Assurance</h4>
+                    <p class="text-slate-400 text-sm">Full ISO & CE Certification. Zero-defect manufacturing philosophy.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-amber-500/20 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500 group-hover:text-white transition duration-500">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Agility</h4>
+                    <p class="text-slate-400 text-sm">Rapid fulfillment. We ship from central logistics to reach ES/PT in record time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 12: Application Mastery -->
+    <section class="slide" id="s12">
+        <div class="slide-content">
+            <h2 class="text-4xl font-bold mb-12 text-center">Clinical Revenue Streams</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                    <div class="text-sky-400 font-bold mb-4">01</div>
+                    <h5 class="font-bold mb-2">Nephrostomy</h5>
+                    <p class="text-[10px] text-slate-500">Long-term urinary drainage. High dependency on string lock.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                    <div class="text-sky-400 font-bold mb-4">02</div>
+                    <h5 class="font-bold mb-2">Abscess</h5>
+                    <p class="text-[10px] text-slate-500">Infected collection drainage. Large holes for thick debris.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                    <div class="text-sky-400 font-bold mb-4">03</div>
+                    <h5 class="font-bold mb-2">Pleural Effusion</h5>
+                    <p class="text-[10px] text-slate-500">Lung drainage. Soft material for patient breathing comfort.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                    <div class="text-sky-400 font-bold mb-4">04</div>
+                    <h5 class="font-bold mb-2">Biliary</h5>
+                    <p class="text-[10px] text-slate-500">Jaundice relief. Precise Seldinger placement required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 13: Logistics & Supply -->
+    <section class="slide" id="s13">
+        <div class="slide-content flex flex-col justify-center items-center">
+            <div class="max-w-3xl text-center">
+                <h2 class="text-5xl font-bold mb-8">Supply Chain <span class="text-sky-400">Certainty.</span></h2>
+                <div class="p-12 bg-white/5 rounded-3xl border border-white/10 relative overflow-hidden">
+                    <div class="flex justify-around items-center mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">99.8%</div>
+                            <div class="text-[10px] text-slate-500">Fill Rate</div>
+                        </div>
+                        <div class="w-px h-12 bg-slate-800"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">15 Days</div>
+                            <div class="text-[10px] text-slate-500">Replenishment</div>
+                        </div>
+                    </div>
+                    <p class="text-slate-400">
+                        We don't just sell devices; we manage inventory. Our distributor portal gives you real-time visibility into production batches and expiry dates.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 14: The Partnership Support -->
+    <section class="slide" id="s14">
+        <div class="slide-content grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-5xl font-bold mb-6">We Support <span class="text-sky-400">You.</span></h2>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 bg-slate-900 p-4 rounded-xl">
+                        <span class="text-2xl">🎓</span>
+                        <div>
+                            <div class="font-bold">Clinical Training</div>
+                            <div class="text-xs text-slate-400">On-site support for your first hospital trials.</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-slate-900 p-4 rounded-xl">
+                        <span class="text-2xl">📢</span>
+                        <div>
+                            <div class="font-bold">Marketing Materials</div>
+                            <div class="text-xs text-slate-400">White-label brochures in Spanish & Portuguese.</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-slate-900 p-4 rounded-xl">
+                        <span class="text-2xl">⚖️</span>
+                        <div>
+                            <div class="font-bold">Regulatory Defense</div>
+                            <div class="text-xs text-slate-400">Full technical files for SNS tender responses.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gradient-to-br from-sky-500 to-teal-500 p-12 rounded-3xl shadow-2xl shadow-sky-500/20">
+                <h4 class="text-3xl font-bold mb-4">Let's Lead Together.</h4>
+                <p class="text-white/80 leading-relaxed mb-6">
+                    Our current growth in Europe is 22% YoY. We are selecting 2 master distributors for the Iberian Peninsula. 
+                </p>
+                <div class="text-sm font-bold uppercase tracking-widest border-t border-white/20 pt-4">Application Window: Q1 2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 15: Call to Action -->
+    <section class="slide" id="s15">
+        <div class="slide-content flex flex-col justify-center items-center text-center">
+            <h2 class="text-6xl md:text-8xl font-black mb-8">READY TO<br><span class="grad-text">SCALE?</span></h2>
+            <div class="space-y-4">
+                <p class="text-xl text-slate-400">Contact us to schedule a product demo & price consultation.</p>
+                <div class="flex gap-4 justify-center mt-8">
+                    <button onclick="currentSlide=0; updateSlide()" class="px-8 py-4 bg-sky-600 hover:bg-sky-500 rounded-full font-bold transition flex items-center gap-2">
+                        REPLAY PITCH ↺
+                    </button>
+                    <button class="px-8 py-4 bg-slate-800 hover:bg-slate-700 rounded-full font-bold transition">
+                        GET SAMPLES
+                    </button>
+                </div>
+            </div>
+            <div class="mt-24 text-[10px] text-slate-600 font-mono">
+                BAIHE MEDICAL TECHNOLOGY • IBERIA STRATEGY GROUP • CONFIDENTIAL
+            </div>
+        </div>
+    </section>
+
+    <!-- UI Overlay -->
+    <div class="progress-container" id="progress"></div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressContainer = document.getElementById('progress');
+
+        // Create dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = `progress-dot ${i === 0 ? 'active' : ''}`;
+            dot.onclick = () => { currentSlide = i; updateSlide(); };
+            progressContainer.appendChild(dot);
+        });
+
+        function updateSlide() {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === currentSlide);
+            });
+            document.querySelectorAll('.progress-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'ArrowDown') {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    updateSlide();
+                }
+            }
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlide();
+                }
+            }
+        });
+
+        // Touch swipe support for mobile/tablet
+        let touchstartX = 0;
+        let touchendX = 0;
+        
+        document.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            if (touchendX < touchstartX - 50) { // Swipe left
+                if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); }
+            }
+            if (touchendX > touchstartX + 50) { // Swipe right
+                if (currentSlide > 0) { currentSlide--; updateSlide(); }
+            }
+        });
+    </script>
+</body>
+</html>
