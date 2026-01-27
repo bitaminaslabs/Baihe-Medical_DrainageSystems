@@ -95,8 +95,8 @@
             z-index: 100;
         }
         .progress-dot {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background: #374151;
             transition: all 0.3s;
@@ -104,7 +104,7 @@
         }
         .progress-dot.active {
             background: var(--sky);
-            width: 24px;
+            width: 20px;
             border-radius: 10px;
         }
         
@@ -208,7 +208,7 @@
                     <div>
                         <div class="text-sky-400 font-bold mb-2">TYPE A</div>
                         <h3 class="text-3xl font-bold mb-4">Standard Seldinger</h3>
-                        <p class="text-slate-400">The reliable powerhouse. Full SKU depth (4Fr-16Fr). Perfect for routine high-volume drainage.</p>
+                        <p class="text-slate-400">The reliable powerhouse. Full SKU depth (6Fr-16Fr). Perfect for routine high-volume drainage.</p>
                     </div>
                     <div class="mt-8 flex justify-between items-end">
                         <div class="catheter-container relative ml-4 mb-4">
@@ -241,49 +241,44 @@
         <div class="slide-content">
             <h2 class="text-4xl font-bold mb-10"><span class="text-sky-400">Clinical</span> Drainage Indications</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 h-3/4">
-                
                 <div class="card-glass p-8 rounded-3xl border-l-4 border-l-sky-500 flex flex-col">
                     <i class="fa-solid fa-lungs text-sky-400 text-3xl mb-6"></i>
                     <h4 class="text-lg font-bold mb-4 uppercase tracking-tighter">1. Thoracotomy</h4>
                     <p class="text-[10px] text-slate-500 mb-4 uppercase font-black tracking-widest">Pleural Space</p>
                     <ul class="text-xs text-slate-400 space-y-2 leading-relaxed">
-                        <li><span class="text-white">Pneumothorax:</span> Air removal</li>
-                        <li><span class="text-white">Pleural Effusion:</span> Fluid accumulation</li>
-                        <li><span class="text-white">Hemothorax:</span> Blood evacuation</li>
-                        <li><span class="text-white">Empyema:</span> Pus/infection drainage</li>
+                        <li><span class="text-white font-bold">Pneumothorax:</span> Air removal</li>
+                        <li><span class="text-white font-bold">Pleural Effusion:</span> Fluid accumulation</li>
+                        <li><span class="text-white font-bold">Hemothorax:</span> Blood evacuation</li>
+                        <li><span class="text-white font-bold">Empyema:</span> Infection drainage</li>
                     </ul>
                 </div>
-
                 <div class="card-glass p-8 rounded-3xl border-l-4 border-l-rose-500 flex flex-col">
                     <i class="fa-solid fa-heart-pulse text-rose-400 text-3xl mb-6"></i>
                     <h4 class="text-lg font-bold mb-4 uppercase tracking-tighter">2. Centesis</h4>
                     <p class="text-[10px] text-slate-500 mb-4 uppercase font-black tracking-widest">Pericardial Sac</p>
                     <ul class="text-xs text-slate-400 space-y-2 leading-relaxed">
-                        <li><span class="text-white">Pericardial Effusion:</span> Prevent cardiac tamponade</li>
-                        <li><span class="text-white">Hemopericardium:</span> Trauma/Aortic dissection blood</li>
+                        <li><span class="text-white font-bold">Effusion:</span> Prevent tamponade</li>
+                        <li><span class="text-white font-bold">Hemopericardium:</span> Trauma blood</li>
                     </ul>
                 </div>
-
                 <div class="card-glass p-8 rounded-3xl border-l-4 border-l-emerald-500 flex flex-col">
                     <i class="fa-solid fa-syringe text-emerald-400 text-3xl mb-6"></i>
                     <h4 class="text-lg font-bold mb-4 uppercase tracking-tighter">3. Paracentesis</h4>
                     <p class="text-[10px] text-slate-500 mb-4 uppercase font-black tracking-widest">Peritoneal Cavity</p>
                     <ul class="text-xs text-slate-400 space-y-2 leading-relaxed">
-                        <li><span class="text-white">Ascites:</span> Cirrhosis/Malignancy fluid</li>
-                        <li><span class="text-white">Abdominal Abscess:</span> Localized infection pockets</li>
+                        <li><span class="text-white font-bold">Ascites:</span> Cirrhosis/Malignancy</li>
+                        <li><span class="text-white font-bold">Abscess:</span> Infection pockets</li>
                     </ul>
                 </div>
-
                 <div class="card-glass p-8 rounded-3xl border-l-4 border-l-amber-500 flex flex-col">
                     <i class="fa-solid fa-user-doctor text-amber-400 text-3xl mb-6"></i>
                     <h4 class="text-lg font-bold mb-4 uppercase tracking-tighter">4. Post-Op</h4>
                     <p class="text-[10px] text-slate-500 mb-4 uppercase font-black tracking-widest">Recovery Support</p>
                     <ul class="text-xs text-slate-400 space-y-2 leading-relaxed">
-                        <li><span class="text-white">Post-thoracotomy:</span> Cardiac/Lung recovery</li>
-                        <li><span class="text-white">Post-laparotomy:</span> Abdominal surgery fluid prevention</li>
+                        <li><span class="text-white font-bold">Thoracotomy:</span> Cardiac recovery</li>
+                        <li><span class="text-white font-bold">Laparotomy:</span> Fluid prevention</li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
@@ -305,17 +300,17 @@
                 </div>
                 <div>
                     <h2 class="text-5xl font-bold mb-6">Smart<br><span class="grad-text">Polyurethane.</span></h2>
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed font-light">
                         Our material is stiff for precise entry, yet <strong>self-softens</strong> at body temperature to prevent patient irritation and kinking.
                     </p>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="p-4 bg-white/5 rounded-xl border border-white/5">
                             <div class="text-sky-400 font-bold mb-1">Radiopaque</div>
-                            <div class="text-xs text-slate-500">Perfect X-Ray mastery</div>
+                            <div class="text-[10px] text-slate-500 uppercase">X-Ray Mastery</div>
                         </div>
                         <div class="p-4 bg-white/5 rounded-xl border border-white/5">
                             <div class="text-sky-400 font-bold mb-1">Biocompatible</div>
-                            <div class="text-xs text-slate-500">Minimizes adherence</div>
+                            <div class="text-[10px] text-slate-500 uppercase">Minimizes Adherence</div>
                         </div>
                     </div>
                 </div>
@@ -327,16 +322,15 @@
     <section class="slide" id="s6">
         <div class="slide-content">
             <h2 class="text-4xl font-bold mb-4">Standard Range: <span class="text-slate-400">The Efficiency Engine</span></h2>
-            <p class="text-lg text-slate-300 mb-12 max-w-3xl">Winning high-volume tenders by providing high-tier specifications at a procurement-ready price point.</p>
-            
+            <p class="text-lg text-slate-300 mb-12 max-w-3xl font-light">Winning high-volume tenders by providing high-tier specifications at a procurement-ready price point.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:bg-slate-800 transition duration-300 group">
                     <div class="text-4xl font-black text-sky-500 mb-2 group-hover:scale-110 transition origin-left">180+</div>
                     <h4 class="text-white font-bold mb-3 uppercase tracking-tighter">Active References</h4>
                     <p class="text-[10px] text-slate-500 leading-relaxed uppercase font-bold tracking-widest">Global Catalog Depth</p>
                 </div>
-                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:bg-slate-800 transition duration-300 group">
-                    <div class="text-4xl font-black text-sky-500 mb-2 group-hover:scale-110 transition origin-left">4Fr-16Fr</div>
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:bg-slate-800 transition duration-300 group text-sky-400">
+                    <div class="text-4xl font-black mb-2 group-hover:scale-110 transition origin-left">4Fr-16Fr</div>
                     <h4 class="text-white font-bold mb-3 uppercase tracking-tighter">Diameter Portfolio</h4>
                     <p class="text-[10px] text-slate-500 leading-relaxed uppercase font-bold tracking-widest">Pediatric to Adult</p>
                 </div>
@@ -347,11 +341,10 @@
                 </div>
                 <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:bg-slate-800 transition duration-300 group">
                     <div class="text-4xl font-black text-sky-500 mb-2 group-hover:scale-110 transition origin-left">4 Types</div>
-                    <h4 class="text-white font-bold mb-3 uppercase tracking-tighter">Configuration</h4>
+                    <h4 class="text-white font-bold mb-3 uppercase tracking-tighter">Design Types</h4>
                     <p class="text-[10px] text-slate-500 leading-relaxed uppercase font-bold tracking-widest">Pigtail, Straight, Z, U</p>
                 </div>
             </div>
-            
             <div class="mt-12 p-8 bg-sky-500/5 border-l-4 border-sky-500 rounded-r-2xl">
                 <p class="text-slate-300 text-lg italic">"A foundation of technical reliability that allows Iberian distributors to consolidate their portfolio under one trusted manufacturer."</p>
             </div>
@@ -367,19 +360,52 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="border-l-2 border-teal-500/50 pl-6">
                         <h4 class="text-xl font-bold mb-2 uppercase tracking-tighter">Direct Access Insertion</h4>
-                        <p class="text-sm text-slate-400">Trocar-based approach allows for single-pass placement in emergency cases.</p>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">Trocar-based approach allows for single-pass placement in emergency cases.</p>
                     </div>
                     <div class="border-l-2 border-teal-500/50 pl-6">
                         <h4 class="text-xl font-bold mb-2 uppercase tracking-tighter">Dual Technique Ready</h4>
-                        <p class="text-sm text-slate-400">Switch to Seldinger placement if the clinical anatomy requires wire-guided precision.</p>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">Switch to Seldinger placement if the clinical anatomy requires wire-guided precision.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 8: Safety String Lock -->
+    <!-- Slide 8: Market Depth (RE-ADDED) -->
     <section class="slide" id="s8">
+        <div class="slide-content">
+            <h2 class="text-4xl font-bold mb-4">Unmatched SKU <span class="text-sky-400">Depth.</span></h2>
+            <p class="text-slate-400 mb-12 font-light">Universal coverage for Nephrostomy, Abscess, and thoracic collections.</p>
+            <div class="grid grid-cols-6 gap-4 text-center">
+                <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 text-lg font-bold">6Fr</div>
+                <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 text-lg font-bold">7Fr</div>
+                <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 text-lg font-bold text-sky-400 ring-1 ring-sky-500/50">8Fr</div>
+                <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 text-lg font-bold">10Fr</div>
+                <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 text-lg font-bold">12Fr</div>
+                <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 text-lg font-bold">14-16Fr</div>
+            </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-900/50 p-10 rounded-3xl border border-slate-800">
+                    <h4 class="font-bold mb-4 flex items-center gap-2 uppercase tracking-tighter"><i class="fa-solid fa-ruler-horizontal text-sky-500"></i> Effective Lengths</h4>
+                    <div class="flex items-center gap-6 px-4">
+                        <span class="text-xs font-mono">15cm</span>
+                        <div class="flex-grow h-[2px] bg-slate-800 relative">
+                            <div class="absolute top-1/2 left-0 w-2 h-2 bg-sky-500 rounded-full -translate-y-1/2"></div>
+                            <div class="absolute top-1/2 right-0 w-2 h-2 bg-sky-500 rounded-full -translate-y-1/2"></div>
+                        </div>
+                        <span class="text-xs font-mono">35cm</span>
+                    </div>
+                </div>
+                <div class="bg-slate-900/50 p-10 rounded-3xl border border-slate-800">
+                    <h4 class="font-bold mb-4 uppercase tracking-tighter">Configurations</h4>
+                    <p class="text-sm text-slate-400 font-light leading-relaxed">Available in Pigtail or Straight shapes, with or without integrated Nylon Line systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Safety String Lock -->
+    <section class="slide" id="s9">
         <div class="slide-content grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="relative bg-slate-900/50 p-12 rounded-full aspect-square flex items-center justify-center border border-teal-500/10">
                 <svg viewBox="0 0 100 100" class="w-full">
@@ -395,14 +421,14 @@
                 </p>
                 <div class="bg-teal-900/10 border border-teal-500/20 p-8 rounded-3xl">
                     <div class="text-teal-400 font-bold mb-2 text-sm uppercase tracking-widest">Clinical Outcome</div>
-                    <p class="text-slate-300 italic">Zero accidental dislodgement. Reduced hospital readmissions. Nursing confidence significantly improved.</p>
+                    <p class="text-slate-300 italic font-light">Zero accidental dislodgement. Reduced hospital readmissions. Nursing confidence significantly improved.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 9: Spain Strategy -->
-    <section class="slide" id="s9">
+    <!-- Slide 10: Spain Strategy -->
+    <section class="slide" id="s10">
         <div class="slide-content grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
                 <div class="flex items-center gap-2 mb-6">
@@ -411,15 +437,15 @@
                     <span class="uppercase tracking-widest font-bold text-slate-500 text-[10px]">Spain Context</span>
                 </div>
                 <h2 class="text-6xl font-black mb-6 tracking-tight">Regional<br><span class="text-red-500">Tenders.</span></h2>
-                <p class="text-lg text-slate-300 mb-8 leading-relaxed font-light">Regional SNS systems (Madrid, Catalonia, Andalusia) require high-volume reliability at transparent pricing.</p>
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed font-light">Regional SNS systems require high-volume reliability at transparent pricing.</p>
                 <div class="space-y-4">
                     <div class="p-4 bg-white/5 border border-white/5 rounded-2xl flex gap-4 items-center">
                         <i class="fa-solid fa-boxes-stacked text-red-500"></i>
-                        <p class="text-sm font-light">Position <strong>Standard Range</strong> for bulk regional procurement.</p>
+                        <p class="text-sm font-light">Position <strong>Standard Range</strong> for bulk SNS procurement.</p>
                     </div>
                     <div class="p-4 bg-white/5 border border-white/5 rounded-2xl flex gap-4 items-center">
                         <i class="fa-solid fa-shield-virus text-red-500"></i>
-                        <p class="text-sm font-light">Target private IR chains with <strong>Single Step</strong> locking kits.</p>
+                        <p class="text-sm font-light">Target private IR chains with <strong>Single Step</strong> kits.</p>
                     </div>
                 </div>
             </div>
@@ -440,8 +466,8 @@
         </div>
     </section>
 
-    <!-- Slide 10: Business Logic -->
-    <section class="slide" id="s10">
+    <!-- Slide 11: Business Logic -->
+    <section class="slide" id="s11">
         <div class="slide-content flex flex-col justify-center">
             <h2 class="text-4xl font-bold mb-16 text-center tracking-tight">The Business <span class="text-sky-400">Logic.</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -457,73 +483,61 @@
                         <i class="fa-solid fa-certificate text-2xl"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-2 uppercase tracking-tighter">Regulatory Armor</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed font-light">Full ISO, CE, and MDR compliance. High-tier technical dossiers ready for QMS and Tenders.</p>
+                    <p class="text-slate-500 text-sm leading-relaxed font-light">Full ISO, CE, and MDR compliance. Technical dossiers ready for QMS and Tenders.</p>
                 </div>
                 <div class="group">
                     <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition duration-500">
                         <i class="fa-solid fa-bolt text-2xl"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-2 uppercase tracking-tighter">Operational Speed</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed font-light">Agile manufacturing and direct communication lines to the Iberian support hub.</p>
+                    <p class="text-slate-500 text-sm leading-relaxed font-light">Agile manufacturing and direct support hub communication.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 11: Clinical Revenue Streams (Versatility Update) -->
-    <section class="slide" id="s11">
+    <!-- Slide 12: Revenue Streams -->
+    <section class="slide" id="s12">
         <div class="slide-content">
             <h2 class="text-4xl font-bold mb-6 text-center tracking-tight">Clinical <span class="text-sky-400">Revenue Streams.</span></h2>
-            <p class="text-center text-slate-400 mb-12 font-light">A comprehensive portfolio covering 100% of interventional drainage billing codes.</p>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <!-- Stream 1 -->
-                <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800 text-center relative overflow-hidden group">
-                    <div class="absolute top-2 right-2 flex gap-1">
-                        <div class="bg-teal-500 text-[8px] font-bold px-1 rounded text-white">TYPE B</div>
-                    </div>
+            <p class="text-center text-slate-400 mb-12 font-light">Comprehensive portfolio covering 100% of billing codes.</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800 relative group">
+                    <div class="absolute top-2 right-2"><div class="bg-teal-500 text-[8px] font-bold px-1 rounded text-white">TYPE B</div></div>
                     <div class="w-12 h-12 bg-sky-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-sky-500 font-bold">01</div>
                     <h5 class="font-bold mb-2 uppercase text-sm tracking-tighter">Nephrostomy</h5>
-                    <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">Secure Long-Term<br>Drainage</p>
+                    <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">Secure Long-Term</p>
                 </div>
-                <!-- Stream 2 -->
-                <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800 text-center relative overflow-hidden group">
+                <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800 relative group">
                     <div class="absolute top-2 right-2 flex gap-1">
                         <div class="bg-sky-500 text-[8px] font-bold px-1 rounded text-white">TYPE A</div>
                         <div class="bg-teal-500 text-[8px] font-bold px-1 rounded text-white">TYPE B</div>
                     </div>
                     <div class="w-12 h-12 bg-sky-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-sky-500 font-bold">02</div>
                     <h5 class="font-bold mb-2 uppercase text-sm tracking-tighter">Abscess</h5>
-                    <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">High-Viscosity<br>Infection Clearance</p>
+                    <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">High Viscosity</p>
                 </div>
-                <!-- Stream 3 -->
-                <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800 text-center relative overflow-hidden group">
-                    <div class="absolute top-2 right-2 flex gap-1">
-                        <div class="bg-sky-500 text-[8px] font-bold px-1 rounded text-white">TYPE A</div>
-                    </div>
+                <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800 relative group">
+                    <div class="absolute top-2 right-2"><div class="bg-sky-500 text-[8px] font-bold px-1 rounded text-white">TYPE A</div></div>
                     <div class="w-12 h-12 bg-sky-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-sky-500 font-bold">03</div>
                     <h5 class="font-bold mb-2 uppercase text-sm tracking-tighter">Pleural</h5>
-                    <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">High-Volume<br>Fluid Management</p>
+                    <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">High Volume Fluid</p>
                 </div>
-                <!-- Stream 4 -->
-                <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800 text-center relative overflow-hidden group">
-                    <div class="absolute top-2 right-2 flex gap-1">
-                        <div class="bg-sky-500 text-[8px] font-bold px-1 rounded text-white">TYPE A</div>
-                    </div>
+                <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800 relative group">
+                    <div class="absolute top-2 right-2"><div class="bg-sky-500 text-[8px] font-bold px-1 rounded text-white">TYPE A</div></div>
                     <div class="w-12 h-12 bg-sky-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-sky-500 font-bold">04</div>
                     <h5 class="font-bold mb-2 uppercase text-sm tracking-tighter">Biliary</h5>
-                    <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">Wire-Guided<br>Precision Access</p>
+                    <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">Precision Access</p>
                 </div>
             </div>
-            <div class="mt-12 text-center">
-                <p class="text-[10px] text-slate-600 uppercase tracking-[0.2em] font-bold">
-                    <span class="text-sky-500">TYPE A:</span> Standard Efficiency &bull; <span class="text-teal-500">TYPE B:</span> Premium Safety Locking
-                </p>
+            <div class="mt-12 text-center text-[10px] text-slate-600 uppercase tracking-widest font-bold">
+                <span class="text-sky-500">TYPE A:</span> Efficiency &bull; <span class="text-teal-500">TYPE B:</span> Premium Safety
             </div>
         </div>
     </section>
 
-    <!-- Slide 12: Partner Support -->
-    <section class="slide" id="s12">
+    <!-- Slide 13: Partner Support -->
+    <section class="slide" id="s13">
         <div class="slide-content grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 class="text-5xl font-bold mb-6 tracking-tight">Growth <span class="text-sky-400">Support.</span></h2>
@@ -532,39 +546,35 @@
                         <div class="text-3xl">🎓</div>
                         <div>
                             <div class="font-bold text-white uppercase tracking-tighter">Clinical Onboarding</div>
-                            <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">On-site support for trials</div>
+                            <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest leading-tight">On-site hospital trials</div>
                         </div>
                     </div>
                     <div class="flex items-center gap-6 bg-slate-900/50 p-6 rounded-3xl border border-slate-800">
                         <div class="text-3xl">📁</div>
                         <div>
                             <div class="font-bold text-white uppercase tracking-tighter">Tender Dossiers</div>
-                            <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Localized SNS/SPMS files</div>
+                            <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest leading-tight">Localized technical files</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bg-gradient-to-br from-sky-600 to-teal-600 p-12 rounded-[3rem] shadow-2xl shadow-sky-900/40">
                 <h4 class="text-3xl font-bold mb-4 tracking-tighter uppercase">Distributorships</h4>
-                <p class="text-white/80 leading-relaxed mb-10 font-light">
-                    We are now finalizing our master distribution network for the Iberian market. Join the future of high-value medical drainage.
-                </p>
+                <p class="text-white/80 leading-relaxed mb-10 font-light">Finalizing Iberian master network for 2026. Secure your market segment now.</p>
                 <div class="text-[10px] font-black uppercase tracking-[0.2em] border-t border-white/20 pt-6">Final Allocations: Q1 2026</div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 13: Contacts -->
-    <section class="slide" id="s13">
+    <!-- Slide 14: Contacts -->
+    <section class="slide" id="s14">
         <div class="slide-content flex flex-col justify-center items-center text-center">
             <h2 class="text-5xl font-bold mb-12 tracking-tight">Let's Define our <span class="grad-text">Future, Together.</span></h2>
-            
             <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                 <div class="bg-white/5 border border-white/10 p-12 rounded-[3rem] backdrop-blur-md">
                     <div class="text-sky-400 font-bold text-xs uppercase tracking-widest mb-4">Primary Contact</div>
-                    <h3 class="text-4xl font-black mb-1">André Ferreira</h3>
+                    <h3 class="text-4xl font-black mb-1 tracking-tighter">André Ferreira</h3>
                     <p class="text-slate-400 mb-10 uppercase tracking-widest text-xs font-bold">Baihe Medical Iberia</p>
-                    
                     <div class="space-y-6">
                         <div class="flex items-center gap-4 text-slate-300">
                             <i class="fa-solid fa-envelope w-6 text-sky-500"></i>
@@ -576,14 +586,10 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="flex flex-col gap-8">
                     <div class="bg-slate-900/50 border border-slate-800 p-8 rounded-3xl">
-                        <h5 class="text-slate-500 text-[10px] uppercase font-bold tracking-widest mb-4">Headquarters</h5>
-                        <p class="text-xs text-slate-400 leading-relaxed font-light">
-                            Guangdong Baihe Medical Technology Co., Ltd.<br>
-                            Foshan, Guangdong Province, P.R.C.
-                        </p>
+                        <h5 class="text-slate-500 text-[10px] uppercase font-bold tracking-widest mb-2">Headquarters</h5>
+                        <p class="text-xs text-slate-400 leading-relaxed font-light">Guangdong Baihe Medical Technology Co., Ltd. P.R.C.</p>
                     </div>
                     <div class="bg-slate-900/50 border border-slate-800 p-8 rounded-3xl flex-grow flex flex-col justify-center items-center text-center">
                         <h5 class="text-slate-500 text-[10px] uppercase font-bold tracking-widest mb-2">Visit Us</h5>
@@ -595,7 +601,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="mt-16">
                 <button onclick="currentSlide=0; updateSlide()" class="text-[10px] font-bold text-slate-500 hover:text-sky-400 transition tracking-[0.3em] uppercase">
                     ↺ Restart Presentation
@@ -638,10 +643,9 @@
         });
 
         let touchstartX = 0;
-        let touchendX = 0;
         document.addEventListener('touchstart', e => touchstartX = e.changedTouches[0].screenX );
         document.addEventListener('touchend', e => {
-            touchendX = e.changedTouches[0].screenX;
+            let touchendX = e.changedTouches[0].screenX;
             if (touchendX < touchstartX - 50 && currentSlide < slides.length - 1) { currentSlide++; updateSlide(); }
             if (touchendX > touchstartX + 50 && currentSlide > 0) { currentSlide--; updateSlide(); }
         });
