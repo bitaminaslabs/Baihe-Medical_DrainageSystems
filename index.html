@@ -382,8 +382,8 @@
                     <div class="flex items-center gap-6 px-4">
                         <span class="text-xs font-mono">15cm</span>
                         <div class="flex-grow h-[2px] bg-slate-800 relative">
-                            <div class="absolute top-1/2 left-0 w-2 h-2 bg-sky-500 rounded-full -translate-y-1/2"></div>
-                            <div class="absolute top-1/2 right-0 w-2 h-2 bg-sky-500 rounded-full -translate-y-1/2"></div>
+                            <div class="absolute top-1/2 left-0_w-2_h-2_bg-sky-500_rounded-full_-translate-y-1/2"></div>
+                            <div class="absolute top-1/2 right-0_w-2_h-2_bg-sky-500_rounded-full_-translate-y-1/2"></div>
                         </div>
                         <span class="text-xs font-mono">35cm</span>
                     </div>
@@ -419,73 +419,61 @@
     </section>
 
     <section class="slide" id="s10">
-        <div class="slide-content">
+        <div class="slide-content flex flex-col justify-center">
             <div class="flex items-center gap-4 mb-8">
                 <div class="w-16 h-1 bg-sky-500"></div>
-                <h2 class="text-4xl font-extrabold uppercase tracking-tighter">One Step DC <span class="text-sky-400">Technical Matrix</span></h2>
+                <h2 class="text-4xl font-extrabold uppercase tracking-tighter">One Step DC <span class="text-sky-400">Configurations</span></h2>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="lg:col-span-2 overflow-x-auto">
-                    <table class="w-full text-left text-[11px] border-collapse">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <div class="lg:col-span-2 bg-white/5 p-6 rounded-3xl border border-white/10 overflow-x-auto">
+                    <h4 class="text-[10px] font-bold text-sky-400 mb-4 uppercase tracking-[0.2em]">Technical Matching [cite: 3]</h4>
+                    <table class="w-full text-left text-[10px] border-collapse">
                         <thead>
-                            <tr class="border-b border-white/10 text-slate-500 uppercase tracking-widest font-bold">
-                                <th class="py-4 px-2">Size (Fr)</th>
-                                <th class="py-4 px-2">Lengths (cm)</th>
-                                <th class="py-4 px-2">Guide Wire (0.035")</th>
-                                <th class="py-4 px-2">Needle</th>
-                                <th class="py-4 px-2">Dilator</th>
+                            <tr class="border-b border-white/10 text-slate-500">
+                                <th class="py-2">Fr Size</th>
+                                <th class="py-2">Wire (Inch)</th>
+                                <th class="py-2">Needle</th>
+                                <th class="py-2">Dilator Match</th>
                             </tr>
                         </thead>
                         <tbody class="text-slate-300">
-                            <tr class="border-b border-white/5 hover:bg-white/5 transition">
-                                <td class="py-4 px-2 font-bold text-sky-400">6F / 7F</td>
-                                <td class="py-4 px-2">15, 20, 25, 30, 35</td>
-                                <td class="py-4 px-2">50-70cm (J-Tip)</td>
-                                <td class="py-4 px-2">18G</td>
-                                <td class="py-4 px-2 text-slate-500">1x (8Fr)</td>
-                            </tr>
-                            <tr class="border-b border-white/5 hover:bg-white/5 transition">
-                                <td class="py-4 px-2 font-bold text-sky-400">8F / 10F</td>
-                                <td class="py-4 px-2">15, 20, 25, 30, 35</td>
-                                <td class="py-4 px-2">50-70cm (J-Tip)</td>
-                                <td class="py-4 px-2">18G</td>
-                                <td class="py-4 px-2 text-slate-500">1x (9Fr/11Fr)</td>
-                            </tr>
-                            <tr class="border-b border-white/5 hover:bg-white/5 transition">
-                                <td class="py-4 px-2 font-bold text-teal-400">12F</td>
-                                <td class="py-4 px-2">15, 20, 25, 30, 35</td>
-                                <td class="py-4 px-2">50-70cm (J-Tip)</td>
-                                <td class="py-4 px-2 text-teal-400">17G</td>
-                                <td class="py-4 px-2 text-slate-500">2x (10/12Fr)</td>
-                            </tr>
-                            <tr class="hover:bg-white/5 transition">
-                                <td class="py-4 px-2 font-bold text-teal-400">14F / 16F</td>
-                                <td class="py-4 px-2">15, 20, 25, 30, 35</td>
-                                <td class="py-4 px-2">50-70cm (J-Tip)</td>
-                                <td class="py-4 px-2 text-teal-400">17G</td>
-                                <td class="py-4 px-2 text-slate-500">2x (12/14/16Fr)</td>
-                            </tr>
+                            <tr class="border-b border-white/5"><td class="py-3">6F/7F</td><td>0.035"</td><td>18G</td><td>8Fr (White)</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-3">8F/10F</td><td>0.035"</td><td>18G</td><td>9/10Fr (Red/White)</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-3 text-teal-400">12F</td><td>0.038"</td><td>17G</td><td>10+12Fr (Dual)</td></tr>
+                            <tr><td class="py-3 text-teal-400">14F/16F</td><td>0.038"</td><td>17G</td><td>12+14/16Fr (Dual)</td></tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div class="bg-white/5 p-6 rounded-3xl border border-white/10 flex flex-col justify-between">
                     <div>
-                        <h4 class="text-[10px] font-bold text-white mb-4 uppercase tracking-[0.2em] border-b border-white/10 pb-2">Standard Kit Contents</h4>
-                        <ul class="space-y-3 text-[10px] text-slate-400 uppercase font-medium">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Raulerson Syringe (5ml)</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> PTC Introducer Needle</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Scalpel (#11)</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Suction Connect Tube</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Catheter Fixation Unit</li>
+                        <h4 class="text-[10px] font-bold text-white mb-4 uppercase tracking-[0.2em] border-b border-white/10 pb-2">Standard Kit </h4>
+                        <ul class="space-y-2 text-[9px] text-slate-400 uppercase font-medium">
+                            <li>1x One Step DC Catheter</li>
+                            <li>1x Raulerson Syringe</li>
+                            <li>1x PTC Needle (18G*20cm)</li>
+                            <li>1x Advancer Guidewire</li>
+                            <li>1x #11 Scalpel</li>
+                            <li>1x External Suction Tube</li>
                         </ul>
                     </div>
-                    <div class="mt-8 pt-4">
-                        <p class="text-[9px] text-slate-500 leading-relaxed italic">Reference T54-25076-04 for technical dossier and compound kit options.</p>
+                </div>
+
+                <div class="bg-sky-500/10 p-6 rounded-3xl border border-sky-500/30 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-[10px] font-bold text-sky-400 mb-4 uppercase tracking-[0.2em] border-b border-sky-500/20 pb-2">Compound Pack </h4>
+                        <ul class="space-y-2 text-[9px] text-slate-400 uppercase font-medium">
+                            <li class="flex justify-between"><span>Surgical Film</span><span>8x12cm</span></li>
+                            <li class="flex justify-between"><span>Gauze Dressing</span><span>2.0 Unit</span></li>
+                            <li class="flex justify-between"><span>Suture + Needle</span><span>1.0 Unit</span></li>
+                            <li class="flex justify-between"><span>Gloves (Size 7)</span><span>2.0 Unit</span></li>
+                            <li class="flex justify-between"><span>Disinfectant Brushes</span><span>3.0 Unit</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
+            <div class="mt-6 text-[9px] text-slate-600 font-mono">DOC REF: T54-25076-04 • REVISION: 2025A [cite: 1, 3]</div>
         </div>
     </section>
 
@@ -552,7 +540,7 @@
                 <div class="absolute inset-0 bg-emerald-500/5 blur-3xl"></div>
                 <h4 class="text-xs uppercase tracking-widest text-slate-500 mb-6 font-bold">Support Infrastructure</h4>
                 <div class="space-y-6 text-left">
-                    <p class="text-xs text-slate-400 font-light mb-4">Dedicated Iberian management providing Technical and Clinical Support. (Direct supply model / No local stocking required).</p>
+                    <p class="text-xs text-slate-400 font-light mb-4">Dedicated Iberian management providing Technical and Clinical Support.</p>
                     <div>
                         <div class="flex justify-between text-[10px] mb-2 uppercase font-bold"><span>Public Sector</span><span>75%</span></div>
                         <div class="h-1.5 bg-slate-800 rounded-full"><div class="h-full bg-emerald-500 w-[75%]"></div></div>
@@ -616,13 +604,13 @@
                     <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">High Viscosity</p>
                 </div>
                 <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800 relative group">
-                    <div class="absolute top-2 right-2"><div class="bg-sky-500 text-[8px] font-bold px-1 rounded text-white">TYPE A</div></div>
+                    <div class="absolute top-2_right-2"><div class="bg-sky-500_text-[8px]_font-bold_px-1_rounded_text-white">TYPE A</div></div>
                     <div class="w-12 h-12 bg-sky-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-sky-500 font-bold">03</div>
                     <h5 class="font-bold mb-2 uppercase text-sm tracking-tighter">Pleural</h5>
                     <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">High Volume Fluid</p>
                 </div>
                 <div class="bg-slate-900/50 p-8 rounded-3xl border border-slate-800 relative group">
-                    <div class="absolute top-2 right-2"><div class="bg-sky-500 text-[8px] font-bold px-1 rounded text-white">TYPE A</div></div>
+                    <div class="absolute top-2_right-2"><div class="bg-sky-500_text-[8px]_font-bold_px-1_rounded_text-white">TYPE A</div></div>
                     <div class="w-12 h-12 bg-sky-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-sky-500 font-bold">04</div>
                     <h5 class="font-bold mb-2 uppercase text-sm tracking-tighter">Biliary</h5>
                     <p class="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">Precision Access</p>
